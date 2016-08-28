@@ -1,10 +1,3 @@
-// This webpack config loads typescript files with ts-loader then use
-// babel-loader to convert all javascript to es5
-//
-// Run this command to build the bundle file:
-//
-// webpack --config webpack.config.es6-to-es5.js 
-//
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var webpack = require('webpack');
@@ -20,11 +13,9 @@ module.exports = {
   'devtool': 'source-map',
   'module': {
     'loaders': [
-      // ts-loader: convert typescript (es6) to javascript (es6),
-      // babel-loader: converts javascript (es6) to javascript (es5)
       {
         'test': /\.tsx?$/,
-        'loaders': ['babel-loader','ts-loader'],
+        'loaders': ['ts-loader'],
         'exclude': [/node_modules/,nodeModulesPath]
       },
       // babel-loader for pure javascript (es6)
