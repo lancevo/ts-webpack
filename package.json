@@ -4,6 +4,11 @@
   "description": "",
   "repository": "",
   "author": "Yo-An Lin",
+  "scripts": {
+    "preinstall" : "sudo npm link typescript",
+    "postinstall": "typings install",
+    "start": "webpack-dev-server --content-base public/ --port 4567 --ip 0.0.0.0"
+  },
   "devDependencies": {
     "async": "^1.2.0",
     "babel-core": "^6.9.0",
